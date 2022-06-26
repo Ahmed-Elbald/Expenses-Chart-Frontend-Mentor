@@ -29,7 +29,7 @@ body {
 
 /* Styling */
 body {
-  background-color: #ffd8d1;
+  background-color: hsl(27, 66%, 92%);
   height: 100vh;
   display: flex;
   justify-content: center;
