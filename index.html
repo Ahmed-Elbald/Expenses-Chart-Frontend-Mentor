@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="Styles/main.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="balance-box">
+      <div class="balance">
+        <span>my balance</span>
+        <span>$921.48</span>
+      </div>
+      <img src="images/logo.svg" alt="Logo" class="logo">
+    </div>
+    <div class="graph">
+      <h3 class="dark-brown">spending - last 7 days</h3>
+      <div class="bars">
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="15"></div>
+          <div class="day text">mon</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="33"></div>
+          <div class="day text">tue</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar largest" data-percentage="52.36"></div>
+          <div class="day text">wed</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="31.07"></div>
+          <div class="day text">thu</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="18.8"></div>
+          <div class="day text">fri</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="45.98"></div>
+          <div class="day text">sat</div>
+        </div>
+        <div class="bar-container">
+          <div class="bar regular" data-percentage="20.1"></div>
+          <div class="day text">sun</div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="total">
+          <p class="text">total this month</p>
+          <span class="dark-brown">$478.33</span>
+        </div>
+        <div class="comparison">
+          <span class="dark-brown">+2.4%</span>
+          <p class="text">from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    let bars = document.querySelectorAll(".bar");
+
+    bars.forEach((element) => {
+      element.style.height = element.dataset.percentage / 40 * 100 + "px"
+    })
+
+  </script>
+</body>
+
+</html>

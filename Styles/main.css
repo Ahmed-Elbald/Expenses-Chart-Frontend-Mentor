@@ -1,0 +1,138 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+i,
+button,
+input[type=submit] {
+  cursor: pointer;
+}
+
+body {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "DM Sans", sans-serif;
+}
+
+.dark-brown {
+  color: #382314;
+}
+
+.text {
+  color: #93867b;
+}
+
+/* Styling */
+body {
+  background-color: #ffd8d1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .balance-box {
+  padding: 1em;
+  color: white;
+  background-color: #ec775f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+}
+.container .balance-box .balance {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.container .balance-box .balance span:first-child {
+  opacity: 0.7;
+}
+.container .balance-box .balance span:last-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.container .balance-box .logo {
+  width: 60px;
+}
+.container .graph {
+  background-color: #fffaf5;
+  margin-top: 1em;
+  border-radius: 1em;
+  padding: 1em;
+}
+.container .graph .bars {
+  display: flex;
+  gap: 0.8em;
+  margin: 3em 0 1.5em;
+}
+.container .graph .bars .bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5em;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.container .graph .bars .bar-container:hover .bar.regular {
+  background-color: #f6a392;
+}
+.container .graph .bars .bar-container:hover .bar.largest {
+  background-color: #a1d8de;
+}
+.container .graph .bars .bar-container:hover .bar::before {
+  opacity: 1;
+}
+.container .graph .bars .bar-container .bar {
+  width: 30px;
+  border-radius: 5px;
+  position: relative;
+  transition-duration: 0.5s;
+}
+.container .graph .bars .bar-container .bar.regular {
+  background-color: #ec775f;
+}
+.container .graph .bars .bar-container .bar.largest {
+  background-color: #76b5bc;
+}
+.container .graph .bars .bar-container .bar::before {
+  content: "$" attr(data-percentage);
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background-color: #382314;
+  color: white;
+  padding: 0.5em;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.container .graph .stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.container .graph .stat .total span.dark-brown {
+  font-size: 1.4rem;
+  line-height: 50px;
+}
+.container .graph .stat .comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
+}
+.container .graph .stat span {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main.css.map */

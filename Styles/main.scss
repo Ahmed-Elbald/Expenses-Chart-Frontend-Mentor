@@ -1,0 +1,145 @@
+// Imprted files
+
+@use "../Styles/GMVL.scss" as *;
+
+// Components
+
+.dark-brown {
+  color: $prices;
+}
+
+.text {
+  color: $text;
+}
+
+/* Styling */
+
+
+body {
+  background-color: $bg;
+  height: 100vh;
+  @include flex-centering;
+}
+
+.container {
+  .balance-box {
+    padding: 1em;
+    color: white;
+    background-color: $regularBars;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1em;
+
+    .balance {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+
+      span:first-child {
+        opacity: .7;
+      }
+
+      span:last-child {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+
+    .logo {
+      width: 60px;
+    }
+  }
+
+  .graph {
+    background-color: $white;
+    margin-top: 1em;
+    border-radius: 1em;
+    padding: 1em;
+
+    .bars {
+      display: flex;
+      gap: .8em;
+      margin: 3em 0 1.5em;
+
+      .bar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        gap: .5em;
+        font-size: .8rem;
+        cursor: pointer;
+
+        &:hover {
+          .bar {
+            &.regular {
+              background-color: $regularBarsFadded;
+            }
+
+            &.largest {
+              background-color: $largestBarFadded;
+            }
+
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+
+        .bar {
+          width: 30px;
+          border-radius: 5px;
+          position: relative;
+          transition-duration: .5s;
+
+          &.regular {
+            background-color: $regularBars;
+          }
+
+          &.largest {
+            background-color: $largestBar;
+          }
+
+          &::before {
+            content: "$" attr(data-percentage);
+            position: absolute;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            background-color: $prices;
+            color: white;
+            padding: .5em;
+            opacity: 0;
+            transition-duration: .5s;
+          }
+        }
+      }
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .9rem;
+
+      .total span.dark-brown {
+        font-size: 1.4rem;
+        line-height: 50px;
+      }
+
+      .comparison {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: end;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
