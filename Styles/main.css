@@ -67,6 +67,9 @@ body {
   border-radius: 1em;
   padding: 1em;
 }
+.container .graph h1 {
+  font-size: 1.3rem;
+}
 .container .graph .bars {
   display: flex;
   gap: 0.8em;
